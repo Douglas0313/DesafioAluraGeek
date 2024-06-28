@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="header">
+        <div class="header-div"><h1>AluraGeek</h1></div>
+    </section>
+
+    <main class="principal">
+
+        <section class="principal-cards" id="principal-cards">
+            <div class="cards">
+                <img src="imagens/super-ni.jpeg" alt="">
+                <p>Super Nintendo</p>
+                <p>R$:60,00</p>
+               
+            </div>
+            <div class="cards">
+                <img src="imagens/super-ni.jpeg" alt="">
+                <p>Super Nintendo</p>
+                <p>R$:60,00</p>
+             </div>
+             <div class="cards">
+                <img src="imagens/ps1.jpeg" alt="">
+                <p>Playstation 1</p>
+                <p>R$:120,00</p>
+             </div>
+             <div class="cards">
+                <img src="imagens/super-ni.jpeg" alt="">
+                <p>Super Nintendo</p>
+                <p>R$:60,00</p>
+             </div>
+             <div class="cards">
+                <img src="imagens/game-boy.jpeg" alt="">
+                <p>Game Boy</p>
+                <p>R$:180,00</p>
+             </div>
+             <div class="cards">
+                <img src="imagens/super-ni.jpeg" alt="">
+                <p>R$:Super Nintendo</p>
+                <p>R$:60,00</p>
+             </div>
+             <div class="cards">
+                <img src="imagens/ps1.jpeg" alt="">
+                <p>Playstation 1</p>
+                <p>R$:150,00</p>
+             </div>
+             <div class="cards">
+                <img src="imagens/super-ni.jpeg" alt="">
+                <p>Super Nintendo</p>
+                <p>R$:60,00</p>
+             </div>
+             <div class="cards">
+                <img src="imagens/game-boy.jpeg" alt="">
+                <p>Game Boy</p>
+                <p>R$:180,00</p>
+             </div>              
+        </section>
+
+
+        <section class="adicionar-produtos">
+            <h1>ADICIONAR PRODUTOS:</h1>
+            <form action="" method="post" class="form">
+                <input type="text" id="nome-produto" placeholder="nome..." class="input-produtos">
+                <input type="text" id="valor-produto" placeholder="valor..." class="input-produtos">
+                <input type="text" id="imagem-produto" placeholder="imagem..." class="input-produtos"> 
+                <div class="form-botao">
+                    <input type="button" id="guardar-btn" value="Guardar" class="input-botao">
+                    <input type="button" value="Limpar" class="input-botao"> 
+                </div>
+                
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer">
+            <h1>AluraGeek</h1>
+            <p>DESENVOLVIDO POR DOUGLAS DE SOUZA</p>
+            <p>ALURA LATAM - 2024</p>
+        
+        </div>
+    </footer>
+
+
+    <script>
+            document.getElementById('guardar-btn').addEventListener('click', function() {
+           
+            const nome = document.getElementById('nome-produto').value;
+            const valor = document.getElementById('valor-produto').value;
+            const imagem = document.getElementById('imagem-produto').value;
+
+          
+            const newCard = document.createElement('div');
+            newCard.classList.add('cards');
+
+            const imgElement = document.createElement('img');
+            imgElement.src = imagem;
+            imgElement.alt = nome;
+            newCard.appendChild(imgElement);
+
+           
+            const nameElement = document.createElement('p');
+            nameElement.textContent = nome;
+            newCard.appendChild(nameElement);
+
+           
+            const priceElement = document.createElement('p');
+            priceElement.textContent = valor;
+            newCard.appendChild(priceElement);
+
+          
+            document.getElementById('principal-cards').appendChild(newCard);
+
+            
+            document.getElementById('nome-produto').value = '';
+            document.getElementById('valor-produto').value = '';
+            document.getElementById('imagem-produto').value = '';
+        });
+    </script>
+</body>
+</html>
